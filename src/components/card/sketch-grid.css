@@ -1,0 +1,45 @@
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, minmax(100px, auto));
+  gap: 1rem;
+  grid-template-areas:
+    "big big tall tall"
+    "big big small1 small2";
+}
+
+.area-big {
+  grid-area: big;
+}
+.area-tall {
+  grid-area: tall;
+}
+.area-small1 {
+  grid-area: small1;
+}
+.area-small2 {
+  grid-area: small2;
+}
+
+.custom-grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, minmax(100px, auto));
+  gap: 1rem;
+  grid-template-areas:
+    "small3 small4 big2 big2"
+    "tall2 tall2 big2 big2";
+}
+
+.area-big2 {
+  grid-area: big2;
+}
+.area-tall2 {
+  grid-area: tall2;
+}
+.area-small3 {
+  grid-area: small3;
+}
+.area-small4 {
+  grid-area: small4;
+}
