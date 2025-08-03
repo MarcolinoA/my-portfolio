@@ -27,7 +27,7 @@
   grid-template-rows: repeat(2, minmax(100px, auto));
   gap: 1rem;
   grid-template-areas:
-    "small3 small4 big2 big2"
+    "small4 small3 big2 big2"
     "tall2 tall2 big2 big2";
 }
 
@@ -42,4 +42,39 @@
 }
 .area-small4 {
   grid-area: small4;
+}
+
+.custom-grid3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, minmax(100px, auto));
+  gap: 1rem;
+  grid-template-areas:
+    "prj1 prj1 prj2 prj2"
+    "null null prj3 prj3";
+}
+
+.area-prj1 {
+  grid-area: prj1;
+}
+.area-prj2 {
+  grid-area: prj2;
+}
+.area-prj3 {
+  grid-area: prj3;
+}
+
+@keyframes fadeInLang {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in-lang {
+	animation: fadeInLang 0.4s ease-in-out forwards;
 }
