@@ -8,7 +8,6 @@ export default function Home() {
 		<main className="bg-[var(--color-black)] min-h-screen flex flex-col items-center py-8">
 			<div className="w-full max-w-6xl">
 				<Banner
-					title="Marco Agostinello"
 					description={{
 						en: `Hi, I'm Marco Agostinello: a full stack junior developer. Welcome to my portfolio, scroll through the cards and click on them to discover my path, let your IDs guide you. 
 							Remember as you read about me that I'm just starting out and that there's still a lot of work to do! 

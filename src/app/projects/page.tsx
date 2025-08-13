@@ -1,5 +1,6 @@
 import SketchGridProject from "@/components/projects/sketch-grid-project";
 import Banner from "@/components/shared/banner";
+import Footer from "@/components/shared/footer";
 
 export default function Page() {
 	return (
@@ -13,6 +14,14 @@ export default function Page() {
 					}}
 				/>
 				<SketchGridProject />
+				<Footer
+					description={{
+						en: `Thank you for taking part in my journey, know that everything I have learned in recent years is the result of the infinite desire to do, it is still very little but I work day by day to do better. I am passionate about this sector and being in this world makes me proud.
+						Scrolling you will find my first projects, take a look and remember that you are in the right place to increase the level of your business! Trust the process!`,
+						it: `Grazie per aver preso parte al mio viaggio, sappi che tutto ciò che ho imparato in questi ultimi anni è frutto dell'infinita voglia di fare, è ancora veramente poco ma lavoro giorno per giorno per fare meglio. Questo settore mi appassiona e essere in questo mondo mi rende fiero.
+						Scrollando troverai i miei primi progetti, dai un occhiata e ricorda che sei nel posto giusto per incrementare il livello della tua attività! Trust the process!`,
+					}}
+				/>
 			</div>
 		</main>
 	);

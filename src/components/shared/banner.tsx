@@ -1,15 +1,15 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin } from "lucide-react";
+import Link from "next/link";
 import Navbar from "./nav";
-import { useLanguage } from "./language-context";
+import MobileNavbar from "./mobile-nav";
 import LanguageToggle from "./language-toggle";
+import { useLanguage } from "./language-context";
 
 type BannerProps = {
-	title: string;
+	title?: string;
 	description: {
 		it: string;
 		en: string;
@@ -20,37 +20,44 @@ export default function Banner({ title, description }: BannerProps) {
 	const { language: lang } = useLanguage();
 
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 40 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.8, ease: "easeOut" }}
-			className="relative w-full h-[40vh] bg-[var(--color-white)] text-[var(--color-black)] rounded-lg overflow-hidden"
-		>
-			<div className="relative w-full h-[40vh] bg-[var(--color-white)] text-[var(--color-black)] rounded-lg overflow-hidden">
-				{/* Navbar centrata in alto */}
-				<div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+		<div className="px-6">
+			<motion.div
+				initial={{ opacity: 0, y: 40 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, ease: "easeOut" }}
+				className="relative w-full h-auto bg-[var(--color-white)] text-[var(--color-black)] rounded-lg overflow-hidden p-6"
+			>
+				<div className="hidden lg:block">
 					<Navbar />
 				</div>
-
-				{/* Descrizione in basso a sinistra */}
-				<div className="absolute bottom-6 left-6 text-[var(--color-black)]">
-					<p className="text-xl font-light max-w-xl mt-2">{description[lang]}</p>
+				<div className="block lg:hidden mb-4">
+					<MobileNavbar />
 				</div>
 
-				{/* Icone in basso a destra */}
-				<div className="absolute bottom-6 right-6 flex flex-row items-end gap-4">
-					<LanguageToggle />
-					<Link href="" className="flex items-center gap-2">
-						<Instagram className="w-10 h-10 text-[var(--color-red)]"/>
-					</Link>
-					<Link href="" className="flex items-center gap-2">
-						<Linkedin className="w-10 h-10 text-[var(--color-red)]"/>
-					</Link>
-					<Link href="" className="flex items-center gap-2">
-						<Github className="w-10 h-10 text-[var(--color-red)]"/>
-					</Link>
+				{/* Contenuto centrale */}
+				<div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-8">
+					{/* Descrizione */}
+					<div className="text-center lg:text-left max-w-xl">
+						<p className="text-lg font-light">{description[lang]}</p>
+					</div>
+
+					{/* Icone + toggle */}
+					<div className="hidden lg:flex flex-row items-end gap-4">
+						<LanguageToggle />
+						<div className="flex gap-4">
+							<Link href="https://www.instagram.com/marco_agostinello">
+								<Instagram className="w-8 h-8 text-[var(--color-red)]" />
+							</Link>
+							<Link href="">
+								<Linkedin className="w-8 h-8 text-[var(--color-red)]" />
+							</Link>
+							<Link href="https://github.com/MarcolinoA">
+								<Github className="w-8 h-8 text-[var(--color-red)]" />
+							</Link>
+						</div>
+					</div>
 				</div>
-			</div>
-		</motion.div>
+			</motion.div>
+		</div>
 	);
 }

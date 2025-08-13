@@ -30,7 +30,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+		<nav className="relative z-10 flex justify-center w-full">
 			<div
 				className="relative"
 				onPointerEnter={handlePointerEnter}

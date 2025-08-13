@@ -114,13 +114,15 @@ const sketches2: SketchItem[] = [
 ];
 
 export default function SketchGridAbout() {
+
+	
 	return (
 		<>
 			<motion.div
 				initial={{ opacity: 0, y: 40 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.1 }}
-				className="custom-grid py-6"
+				className="custom-grid p-6 pt-6"
 			>
 				{sketches.map((sketch) => (
 					<div key={sketch.id} className={`area-${sketch.area}`}>
@@ -133,7 +135,7 @@ export default function SketchGridAbout() {
 				initial={{ opacity: 0, y: 40 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.2 }}
-				className="custom-grid2 py-6 pt-0"
+				className="custom-grid2 px-6 pb-6"
 			>
 				{sketches2.map((sketch) => (
 					<div key={sketch.id} className={`area-${sketch.area}`}>

@@ -11,12 +11,15 @@ type SketchCardProps = {
 		en: string;
 	};
 	inProgress?: boolean;
+	bgColor?: string;
 };
 
 export default function SketchCardProject({
 	imageSrc,
 	title,
+	extDesc,
 	inProgress = false,
+	bgColor, 
 }: SketchCardProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isHovered, setIsHovered] = useState(false);
@@ -26,11 +29,14 @@ export default function SketchCardProject({
 		<>
 			{/* Card */}
 			<div
-				className={`group relative cursor-pointer transition-colors duration-300 rounded-lg shadow-md px-6 py-6 w-full h-full bg-[var(--color-white)]`}
+				className={`group relative cursor-pointer transition-colors duration-300 rounded-lg shadow-md px-6 py-6 w-full h-full ${bgColor}`}
 				onClick={() => setIsOpen(true)}
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}
 			>
+				{/* Overlay "in progress" */}
 				{inProgress && isHovered && (
-					<div className="absolute inset-0 flex flex-col justify-center items-center rounded-lg z-10 bg-[var(--color-white)] pointer-events-none">
+					<div className="absolute inset-0 flex flex-col justify-center items-center rounded-lg z-10 bg-white/90 pointer-events-none">
 						<Image
 							src="/hourglass.png"
 							alt="In progress"
